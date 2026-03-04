@@ -1,0 +1,22 @@
+{
+  "name": "shadowpool-contracts",
+  "version": "1.0.0",
+  "description": "ShadowPool fhEVM v0.9.1 smart contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@fhevm/hardhat-plugin": "^0.4.2",
+    "@fhevm/solidity": "^0.11.1",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@types/node": "^25.5.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.19.0",
+    "hardhat-deploy": "^1.0.4",
+    "starknet": "^6.11.0",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^6.0.2"
+  }
+}
