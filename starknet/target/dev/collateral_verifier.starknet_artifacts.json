@@ -1,0 +1,1 @@
+{"version":1,"contracts":[{"id":"5u7ln7iog82ei","package_name":"collateral_verifier","contract_name":"CollateralVerifier","module_path":"collateral_verifier::collateral_verifier::CollateralVerifier","artifacts":{"sierra":"collateral_verifier_CollateralVerifier.contract_class.json","casm":"collateral_verifier_CollateralVerifier.compiled_contract_class.json"}}]}
