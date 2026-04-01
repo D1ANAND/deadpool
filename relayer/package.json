@@ -4,7 +4,8 @@
   "description": "Cross-chain relayer for Starknet to EVM proofs",
   "main": "relayer.ts",
   "scripts": {
-    "start": "ts-node relayer.ts"
+    "start": "ts-node relayer.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

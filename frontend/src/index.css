@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.5%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 0 72% 51%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 0 84% 60%;
+    --radius: 0.5rem;
+
+    --crimson: 0 84% 60%;
+    --crimson-dark: 0 74% 50%;
+    --pitch: 0 0% 3.5%;
+    --pitch-deep: 0 0% 0%;
+    --glow-red: 0 84% 60% / 0.3;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-md border border-border rounded-lg;
+  }
+  .glass-panel-active {
+    @apply bg-card/60 backdrop-blur-md border rounded-lg;
+    border-color: hsl(var(--crimson) / 0.5);
+    box-shadow: 0 0 15px hsl(var(--glow-red)), inset 0 0 15px hsl(var(--crimson) / 0.05);
+  }
+  .glow-border {
+    box-shadow: 0 0 10px hsl(var(--glow-red));
+    border-color: hsl(var(--crimson) / 0.6);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--crimson) / 0.5);
+  }
+  .btn-crimson {
+    @apply bg-primary hover:bg-accent text-primary-foreground font-semibold px-6 py-3 rounded-lg transition-all duration-200;
+    box-shadow: 0 0 20px hsl(var(--glow-red));
+  }
+  .btn-crimson:hover {
+    box-shadow: 0 0 30px hsl(var(--crimson) / 0.5);
+  }
+  .btn-outline-danger {
+    @apply border border-primary/50 text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-200 rounded-lg px-4 py-2;
+  }
+  .flash-crimson {
+    animation: flash-red 0.6s ease-out;
+  }
+  @keyframes flash-red {
+    0% { color: hsl(var(--crimson)); text-shadow: 0 0 10px hsl(var(--glow-red)); }
+    100% { color: hsl(var(--foreground)); text-shadow: none; }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 5px hsl(var(--glow-red)); }
+    50% { box-shadow: 0 0 20px hsl(var(--glow-red)); }
+  }
+}
